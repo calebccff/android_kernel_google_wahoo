@@ -50,6 +50,8 @@ int __init __weak early_init_dt_alloc_reserved_memory_arch(phys_addr_t size,
 		return -ENOMEM;
 	}
 
+	pr_info("Assigned memory at %p.", &base);
+
 	*res_base = base;
 	if (nomap)
 		return memblock_remove(base, size);
